@@ -7,15 +7,18 @@ namespace CalculatorTests
     
     public class UnitTest1
     {
+
+        
         [Fact]
         public void AdditionTest()
+
         {
             a = 5;
             b = 6.3;
 
             expectedResult = a + b;
 
-            CalculatorTests calculator = new Calculator();
+            CalculatorTests calculator = new CalculatorTests();
 
             double actualResult = calculator.Plus(a, b);
 
