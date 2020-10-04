@@ -32,7 +32,7 @@ namespace Calculator
 
 
             // to convert string inputs to integer values
-            int integerInput1, integerInput2;
+            int integerInput1, integerInput2, intResult;
             //If a non-numeric is entered add try/catch block to handle the exception.
             integerInput1 = TryToConvertToInt(stringInput1);
             integerInput2 = TryToConvertToInt(stringInput2);
@@ -51,6 +51,7 @@ namespace Calculator
                     //TODO
                     break;
                 case subtraction:
+                    intResult = IntegerSubtraction(integerInput1, integerInput2);
                     break;
                 case division:
                     //TODO
@@ -70,7 +71,8 @@ namespace Calculator
 
             // just to indicate that the application has finished
             Console.WriteLine("\nFinished");
-        }
+        } // (end of Main method)
+
 
 
         /*
