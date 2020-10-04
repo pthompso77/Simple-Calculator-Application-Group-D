@@ -7,16 +7,6 @@ namespace Calculator
     {
        
         static void Main(string[] args){
-            
-            /// Example to get you started,
-            /// Remove the following code below after you run the app to ensure it works.
-            
-            int a = 49;
-            int b = 22;
-            int c = a + b;
-            Console.WriteLine(c);
-            Console.ReadKey();
-
 
             //Display title as the Calculator App.
                 // does "title" mean to just print this to the terminal window?
