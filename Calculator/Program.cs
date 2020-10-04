@@ -13,26 +13,29 @@ namespace Calculator
 
             //Declare 3 variables and set to empty.
             //*Hint* 
-            string numInput1, numInput2, result;
-            numInput1 = numInput2 = result = "";
+            string stringInput1, stringInput2, stringResult;
+            stringInput1 = stringInput2 = stringResult = "";
 
 
 
             //Ask the user to type the first number
-            numInput1 = GetStringFromUser_withMessage("Type a number, and then press Enter: ");
+            stringInput1 = GetStringFromUser_withMessage("Type a number, and then press Enter: ");
 
 
 
             //Ask the user to type the second number.
-            numInput2 = GetStringFromUser_withMessage("Type a number, and then press Enter: ");
+            stringInput2 = GetStringFromUser_withMessage("Type a number, and then press Enter: ");
 
 
             //Ask the user to the user to choose an operator.
             string operation = GetStringFromUser_withMessage("Choose an operator (+  -  /  *): ");
 
 
-
+            // to convert string inputs to integer values
+            int integerInput1, integerInput2;
             //If a non-numeric is entered add try/catch block to handle the exception.
+            integerInput1 = TryToConvertToInt(stringInput1);
+            integerInput1 = TryToConvertToInt(stringInput1);
 
 
 
@@ -56,7 +59,7 @@ namespace Calculator
                     //TODO
                     break;
                 default:
-                    result = "0"; //I guess?
+                    stringResult = "0"; //I guess?
                     break;
             }
 
@@ -67,6 +70,29 @@ namespace Calculator
 
             // just to indicate that the application has finished
             Console.WriteLine("\nFinished");
+        }
+
+
+        /*
+         * Tries to parse an integer from the input string
+         * Prints an error message if the input is not able to be parsed
+         * Asks the user to try again until valid input (integer) is provided
+         */
+        private static int TryToConvertToInt(string stringInput)
+        {
+            int convertedInteger;
+            try
+            {
+                convertedInteger = int.Parse(stringInput);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Sorry... {ex.Message}");
+
+                string tryAgain = GetStringFromUser_withMessage($"{stringInput} is not an INTEGER! Try again: ");
+                convertedInteger = TryToConvertToInt(tryAgain);
+            }
+            return convertedInteger;
         }
 
 
