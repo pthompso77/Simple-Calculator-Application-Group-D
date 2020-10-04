@@ -19,19 +19,20 @@ namespace Calculator
 
 
             //Display title as the Calculator App.
+                // does "title" mean to just print this to the terminal window?
 
             //Declare 3 variables and set to empty.
-
-            //*Hint* numInput1= ; numInput2= ; result = ;
-            //String numbInput1 = "";
+            //*Hint* 
+            string numInput1, numInput2, result;
+            numInput1 = numInput2 = result = "";
 
 
 
             //Ask the user to type the first number
 
             //*Hint*
-            //Console.WriteLine("Type a number, and then press Enter: ");
-            //inputNumb1 = Console.ReadLine();
+            Console.WriteLine("Type a number, and then press Enter: ");
+            numInput1 = Console.ReadLine();
 
 
             //Ask the user to type the second number.
@@ -40,7 +41,7 @@ namespace Calculator
             //Use a switch statement to do the calculations
             //Wait for the user to respond before closing.
 
-
+            Console.WriteLine("\nFinished");
         }
 
 
