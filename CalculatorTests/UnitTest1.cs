@@ -1,30 +1,25 @@
 using System;
-using Xunit;
 using Calculator;
+using NUnit.Framework;
 
 namespace CalculatorTests
 {
-    
-    public class UnitTest1
+  
+    public class Tests
     {
+       
 
-        
-        [Fact]
-        public void AdditionTest()
-
+        [Test]
+        public void AddTest()
         {
-            a = 5;
-            b = 6.3;
+            CalculatorApp calculator = new CalculatorApp();
 
-            expectedResult = a + b;
-
-            CalculatorTests calculator = new CalculatorTests();
-
-            double actualResult = calculator.Plus(a, b);
-
-            Assert.Equals(expectedResult, actualResult, "The expected result was {0} , using a={1} and b={2}, but the actual result was {3}",
-               expectedResult, a, b, actualResult);
-
+            Assert.AreEqual(4, calculator.Add(2, 2));
         }
+
+        //add more test code here//
+       
     }
-}
+
+  
+ }

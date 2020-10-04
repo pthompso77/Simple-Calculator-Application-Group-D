@@ -1,13 +1,15 @@
 ﻿using System;
 
+
 namespace Calculator
 {
     class Program
     {
+       
         static void Main(string[] args){
-
-            //Example to get you started,
-            // Remove the following code below after you run the app to ensure it works.
+            
+            /// Example to get you started,
+            /// Remove the following code below after you run the app to ensure it works.
             
             int a = 49;
             int b = 22;
