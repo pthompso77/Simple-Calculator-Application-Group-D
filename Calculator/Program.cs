@@ -13,8 +13,8 @@ namespace Calculator
 
             //Declare 3 variables and set to empty.
             //*Hint* 
-            string stringInput1, stringInput2, stringResult;
-            stringInput1 = stringInput2 = stringResult = "";
+            string stringInput1, stringInput2; // don't need stringResult, right?  stringResult;
+            stringInput1 = stringInput2 = ""; // don't need stringResult? stringResult = "";
 
 
 
@@ -36,15 +36,17 @@ namespace Calculator
             //If a non-numeric is entered add try/catch block to handle the exception.
             integerInput1 = TryToConvertToInt(stringInput1);
             integerInput2 = TryToConvertToInt(stringInput2);
+            intResult = 0; // just to assign it to something
 
 
 
             //Use a switch statement to do the calculations
-            // possible operators
+            // possible operators:
             const string addition = "+";
             const string subtraction = "-";
             const string division = "/";
             const string multiplication = "*";
+
             switch (operation)
             {
                 case addition:
@@ -60,7 +62,7 @@ namespace Calculator
                     //TODO
                     break;
                 default:
-                    stringResult = "0"; //I guess?
+                    intResult = 0; //I guess?
                     break;
             }
 
@@ -68,11 +70,13 @@ namespace Calculator
             // TODO
 
 
+            // Display the result of the operation
+            Console.WriteLine($"{integerInput1} {operation} {integerInput2} = {intResult}");
 
-            // just to indicate that the application has finished
-            Console.WriteLine("\nFinished");
         } // (end of Main method)
 
+
+        // (Begin helper methods)
 
 
         /*
@@ -92,6 +96,7 @@ namespace Calculator
                 Console.WriteLine($"Sorry... {ex.Message}");
 
                 string tryAgain = GetStringFromUser_withMessage($"{stringInput} is not an INTEGER! Try again: ");
+
                 convertedInteger = TryToConvertToInt(tryAgain);
             }
             return convertedInteger;
@@ -109,7 +114,9 @@ namespace Calculator
         }
 
 
-
+        /*
+         * performs subtraction operation on the integers provided
+         */
         static int IntegerSubtraction(int number1, int number2)
         {
             /*
