@@ -19,19 +19,65 @@ namespace Calculator
 
 
             //Ask the user to type the first number
+            numInput1 = GetStringFromUser_withMessage("Type a number, and then press Enter: ");
 
-            //*Hint*
-            Console.WriteLine("Type a number, and then press Enter: ");
-            numInput1 = Console.ReadLine();
 
 
             //Ask the user to type the second number.
-            //Ask the user to the user to choose an operator.
-            //If a non-numeric is entered add try/catch block to handle the exception.
-            //Use a switch statement to do the calculations
-            //Wait for the user to respond before closing.
+            numInput2 = GetStringFromUser_withMessage("Type a number, and then press Enter: ");
 
+
+            //Ask the user to the user to choose an operator.
+            string operation = GetStringFromUser_withMessage("Choose an operator (+  -  /  *): ");
+
+
+
+            //If a non-numeric is entered add try/catch block to handle the exception.
+
+
+
+            //Use a switch statement to do the calculations
+            // possible operators
+            const string addition = "+";
+            const string subtraction = "-";
+            const string division = "/";
+            const string multiplication = "*";
+            switch (operation)
+            {
+                case addition:
+                    //TODO
+                    break;
+                case subtraction:
+                    break;
+                case division:
+                    //TODO
+                    break;
+                case multiplication:
+                    //TODO
+                    break;
+                default:
+                    result = "0"; //I guess?
+                    break;
+            }
+
+            //Wait for the user to respond before closing.
+            // TODO
+
+
+
+            // just to indicate that the application has finished
             Console.WriteLine("\nFinished");
+        }
+
+
+        /*
+         * This is to streamline the message/input process
+         */
+        static string GetStringFromUser_withMessage(string message)
+        {
+            Console.WriteLine(message);
+            string userInput = Console.ReadLine();
+            return userInput;
         }
 
 
