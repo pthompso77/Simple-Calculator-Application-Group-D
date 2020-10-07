@@ -53,10 +53,10 @@ namespace Calculator
                     //TODO
                     break;
                 case subtraction:
-                    intResult = IntegerSubtraction(integerInput1, integerInput2);
+                    intResult = integerInput1 - integerInput2;
                     break;
                 case division:
-                    //TODO
+                    intResult = integerInput1 / integerInput2;
                     break;
                 case multiplication:
                     //TODO
@@ -114,18 +114,5 @@ namespace Calculator
         }
 
 
-        /*
-         * performs subtraction operation on the integers provided
-         */
-        static int IntegerSubtraction(int number1, int number2)
-        {
-            /*
-             * Acceptance Criteria:
-             * As a user I want to able to subtraction two integer numbers 
-             * and return the difference
-             * (ex: int a = 119; int b = 42; int c = a - b; Console.WriteLine(c); c= 77)
-            */
-            return number1 - number2;
-        }
     }
 }
